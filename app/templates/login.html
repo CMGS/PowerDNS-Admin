@@ -58,7 +58,6 @@
       <div class="form-group">
         <input type="otptoken" class="form-control" placeholder="OTP Token" name="otptoken">
       </div>
-        
             {% if ldap_enabled and basic_enabled %}
                     <div class="form-group">
               <select class="form-control" name="auth_method">
@@ -99,6 +98,9 @@
         <!-- /.col -->
       </div>
     </form>
+    {% if github_enabled %}
+    <a href="{{ url_for('github_login') }}">Github oauth login</a>
+    {% endif %}
     {% if signup_enabled %}
     <a href="{{ url_for('register') }}" class="text-center">Create an account </a>
     {% endif %}
